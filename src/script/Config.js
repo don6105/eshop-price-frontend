@@ -1,0 +1,1 @@
+export const API = 'http://10.1.1.12/eshop-price/index.php';
