@@ -26,9 +26,6 @@ export default {
   name: 'GameList',
   props: {
     game: Object
-  },
-  mounted() {
-    console.log(this.game);
   }
 }
 </script>

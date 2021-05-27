@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto px-2 md:px-8">
+  <div class="container mx-auto px-1 md:px-2 md:px-4">
     <GameList title="Game List"/>
     <div class="grid md:grid-cols-3">
       <GameCard v-bind:key="game" v-bind:game="game" v-for="game in games"/>
@@ -18,18 +18,36 @@ export default {
     GameList,
     GameCard
   },
+  methods: {
+    getGameList() {
+      axios
+      .get(`http://10.1.1.12/eshop-price/index.php/api/v1/game?page=${this.page}`)
+      .then((response) => { 
+        this.games = this.games.concat(response.data);
+        this.page += 1;
+      })
+      .catch(function (error) { // 请求失败处理
+        console.log(error);
+      });
+    }
+  },
   data() {
     return {
-      games: ''
+      games: [],
+      page: 0
     }
   },
   mounted() {
-    axios
-    .get('http://127.0.0.1/eshop-price/index.php/api/v1/game')
-    .then((response) => { this.games = response.data; })
-    .catch(function (error) { // 请求失败处理
-      console.log(error);
-    });
+    this.getGameList();
+    let _this = this;
+    window.onscroll = function(){
+      let scrollTop    = document.documentElement.scrollTop || document.body.scrollTop;
+      let windowHeight = document.documentElement.clientHeight || document.body.clientHeight;
+      let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      if((scrollTop + windowHeight) == scrollHeight){
+        _this.getGameList();
+      }
+    }
   }
 }
 </script>
