@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/about" draggable="false">
+  <router-link :to="{name: 'GameInfo', params: {summary_id: game.ID}}" draggable="false">
     <div class="flex flex-row game-card">
       <div class="game-boxart">
         <img v-if="game.Boxart" v-bind:src="game.Boxart"/>

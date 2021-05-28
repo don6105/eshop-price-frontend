@@ -1,6 +1,7 @@
 import { createWebHistory, createRouter } from "vue-router";
 import GameList from "@/views/GameList.vue";
-import About from "@/views/About.vue";
+import GameInfo from "@/views/GameInfo.vue";
+import NotFound from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -9,9 +10,14 @@ const routes = [
     component: GameList,
   },
   {
-    path: "/about",
-    name: "About",
-    component: About,
+    path: "/info/:summary_id",
+    name: "GameInfo",
+    component: GameInfo,
+    props: true,
+  },
+  {
+    path: "/:catchAll(.*)",
+    component: NotFound,
   },
 ];
 
