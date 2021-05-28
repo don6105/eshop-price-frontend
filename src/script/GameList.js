@@ -51,9 +51,9 @@ export default {
   },
   mounted() {
     this.getGameList();
-    let _this = this;
-    window.onscroll = function(){
-      _this.isBottom() && _this.getGameList();
-    }
+    // let _this = this;
+    // window.onscroll = function(){
+    //   _this.isBottom() && _this.getGameList();
+    // }
   }
 }

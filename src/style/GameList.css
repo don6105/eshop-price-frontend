@@ -6,7 +6,6 @@
 }
 .search-input {
   @apply inline-block w-7/12 pl-0;
-  @apply lg:pl-6;
 }
 .search-input > input {
   @apply inline-block rounded-md border border-gray-400;
@@ -21,16 +20,16 @@
 .search-button > button {
   @apply inline-block rounded-md py-1 px-1 w-full;
   @apply bg-blue-500 hover:bg-blue-600 text-white;
-  @apply lg:w-4/12 lg:py-2;
+  @apply lg:w-4/12 lg:py-1;
 }
 .sort-selection {
   @apply inline-block;
   @apply w-2/12;
 }
 .sort-selection > select {
-  margin-bottom: -0.7rem;
-  @apply w-9 h-9 px-0 rounded-full float-right;
-  @apply lg:w-32 lg:h-10 lg:px-2 lg:rounded-md;
+  margin-bottom: -0.6rem;
+  @apply w-9 h-8 pl-0 rounded-full float-right;
+  @apply lg:w-32 lg:h-9 lg:px-2 lg:py-1 lg:rounded-md;
   @apply text-white lg:text-gray-700;
 }
 .sort-selection > select > option {

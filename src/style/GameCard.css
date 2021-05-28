@@ -1,29 +1,30 @@
 .game-card {
-  @apply my-1 divide-y divide-gray-400;
+  @apply my-1 w-full divide-y divide-gray-400;
 }
 .game-boxart {
-  @apply w-3/12;
+  @apply w-3/12 max-w-max;
   @apply lg:w-5/12;
 }
 .game-boxart > img {
-  @apply float-right h-20 w-20;
+  @apply h-20 w-20;
   @apply lg:h-36 lg:w-36;
 }
 .game-data {
-  @apply flex flex-col pl-2 relative;
+  @apply flex flex-col relative;
   @apply h-20 w-9/12;
   @apply lg:h-36 lg:w-7/12;
 }
 .game-title {
-  @apply font-bold truncate;
-  @apply lg:text-2xl;
+  @apply font-bold truncate pl-2;
+  @apply w-7/12 mb-1;
+  @apply lg:w-full lg:text-2xl lg:mb-2;
 }
 .all-chinese {
-  @apply px-1 mr-1 rounded;
+  @apply px-1 ml-2 rounded;
   @apply bg-gray-200 text-red-600;
 }
 .lowest-price {
-  @apply px-1 mr-1 rounded;
+  @apply px-1 ml-2 rounded;
   @apply bg-gray-200 text-blue-600;
 }
 .price-group {
@@ -41,6 +42,6 @@
 .discount-box {
   @apply bg-red-500 text-white;
   @apply pl-2 pr-1 rounded-tl-xl;
-  @apply absolute bottom-0 right-5;
+  @apply absolute bottom-0 right-0;
   @apply lg:pl-3 lg:pr-2 lg:right-2; 
 }

@@ -1,5 +1,7 @@
-import { createApp } from 'vue'
-import GameList from './GameList.vue'
-import './assets/tailwind.css'
+import '@/assets/tailwind.css'
 
-createApp(GameList).mount('#app')
+import { createApp } from 'vue'
+import App from '@/App.vue'
+import router from '@/router.js'
+
+createApp(App).use(router).mount('#app')
