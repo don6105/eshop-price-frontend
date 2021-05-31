@@ -3,7 +3,7 @@
     <div class="flex flex-row game-card">
       <div class="game-boxart">
         <img v-if="game.Boxart" v-bind:src="game.Boxart"/>
-        <img v-else src="../assets/error-img.jpeg"/>
+        <img v-else src="@/assets/error-img.jpeg"/>
       </div>
 
       <div class="game-data">
@@ -34,4 +34,4 @@ export default {
 }
 </script>
 
-<style scoped src="@/style/GameCard.css"></style>
+<style scoped src="@/styles/GameCard.css"></style>

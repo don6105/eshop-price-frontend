@@ -23,12 +23,12 @@
     </div>
 
     <div class="grid w-full lg:grid-cols-3">
-      <GameCard v-bind:key="game" v-bind:game="game" v-for="game in games"/>
+      <GameCard v-for="game in games" :key="game" :game="game"/>
     </div>
 
   </div>
 </template>
 
-<script src="@/script/GameList.js"></script>
+<script src="@/scripts/GameList.js"></script>
 
-<style scoped src="@/style/GameList.css"></style>
+<style scoped src="@/styles/GameList.css"></style>

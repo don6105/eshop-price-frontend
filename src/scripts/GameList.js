@@ -1,9 +1,8 @@
-import GameCard from '../components/GameCard.vue'
-import { API } from './Config.js'
+import GameCard from '@/components/GameCard.vue'
+import { API } from '@/scripts/Config.js'
 import axios from "axios"
 
 export default {
-  name: 'App',
   components: {
     GameCard
   },

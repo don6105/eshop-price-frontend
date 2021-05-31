@@ -1,6 +1,9 @@
 <template>
   <div id="nav">
-    <router-link to="/" class="home-btn">Home</router-link>
+    <router-link to="/" class="home-btn">
+      <img src="@/assets/rabbit.png"/>
+      <div>Home</div>
+    </router-link>
 
     <div class="menu-icon" :class="{ active: showMenu }" v-on:click="showMenu = !showMenu">
       <div class="bar1"></div>
@@ -36,8 +39,16 @@ export default {
   @apply bg-gray-800 text-white;
 }
 .home-btn {
-  @apply inline-block font-bold mx-2 mt-1;
-  @apply lg:text-2xl lg:mx-3 lg:mb-1;
+  @apply inline-block font-bold mx-1 mt-1;
+  @apply lg:text-2xl lg:mx-3 lg:mt-0 lg:mb-1 lg:px-2 lg:py-1;
+  @apply rounded-lg hover:bg-gray-900;
+}
+.home-btn > img {
+  @apply inline-block w-5 h-5 mb-1;
+  @apply lg:w-8 lg:h-8 lg:-mt-1 lg:mb-0 pr-0.5;
+}
+.home-btn > div {
+  @apply inline-block lg:h-8;
 }
 
 /* dropdown menu */
@@ -63,8 +74,8 @@ export default {
 
 /* menu icon */
 .menu-icon {
-  @apply w-1/12 float-right inline-block cursor-pointer mt-1 mr-1;
-  @apply lg:w-8;
+  @apply w-1/12 float-right inline-block cursor-pointer mt-0.5 mr-1;
+  @apply lg:w-8 lg:mt-2 lg:mr-2;
 }
 .bar1, .bar2, .bar3 {
   @apply bg-white;
