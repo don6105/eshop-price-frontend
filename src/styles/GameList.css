@@ -25,8 +25,8 @@
   @apply lg:w-4/12 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block w-2/12;
-  @apply lg:absolute lg:right-80 lg:mt-1;
+  @apply inline-block w-2/12 -ml-2;
+  @apply lg:-ml-80;
 }
 .sort-selection > select {
   margin-bottom: -0.6rem;
