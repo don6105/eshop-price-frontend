@@ -15,6 +15,20 @@ export default {
     }
   },
   methods: {
+    setPersistPageData() {
+      for(let k in this.$data) {
+        localStorage.setItem(k, JSON.stringify(this.$data[k]));
+      }
+    },
+    getPersistPageData() {
+      for(let k in this.$data) {
+        let value = JSON.parse(localStorage.getItem(k));
+        if(value !== null) {
+          this.$data[k] = value;
+        }
+        localStorage.removeItem(k);
+      }
+    },
     clearGameList() {
       this.games = [];
       this.page  = 0;
@@ -49,10 +63,16 @@ export default {
     }
   },
   mounted() {
-    this.getGameList();
+    this.getPersistPageData();
+    if(this.games === null || this.games.length === 0) {
+      this.getGameList();
+    }
     let _this = this;
     window.onscroll = function(){
       _this.isBottom() && _this.getGameList();
     }
+  },
+  beforeRouteLeave() {
+    this.setPersistPageData();
   }
 }

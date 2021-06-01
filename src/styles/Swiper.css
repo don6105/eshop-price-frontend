@@ -1,0 +1,45 @@
+.swiper-container {
+  @apply w-full h-full rounded-md;
+}
+.swiper-slide {
+  @apply text-center text-lg bg-gray-100 rounded-md;
+  @apply flex justify-center items-center;
+}
+.swiper-slide > * {
+  @apply block w-full h-full object-cover rounded;
+  @apply lg:w-8/12 lg:h-96;
+}
+.swiper-container {
+  @apply mx-auto;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  @apply text-3xl font-black text-white;
+  @apply lg:text-5xl lg:text-blue-500;
+  -webkit-text-stroke: 2px;
+}
+.swiper-button-hover {
+  @apply lg:text-red-500;
+}
+.swiper-button-prev {
+  @apply left-0;
+  @apply lg:left-24;
+}
+.swiper-button-next {
+  @apply right-0;
+  @apply lg:right-24;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+  @apply bg-white w-5 h-2 mx-2 rounded;
+  @apply lg:w-6 lg:h-3 lg:mx-2;
+}
+.swiper-pagination-bullet {
+  @apply opacity-40;
+}
+.swiper-pagination-bullet-active {
+  @apply opacity-100;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets {
+  @apply bottom-0;
+  @apply lg:-bottom-1;
+}

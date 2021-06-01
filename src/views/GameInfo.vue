@@ -10,6 +10,7 @@
         :pagination="{'clickable': true}"
         :navigation="true"
         :keyboard="true"
+        :initialSlide="1"
       >
         <swiper-slide v-for="slide in gallery" :key="slide">
           <img v-if="slide.image" :src="slide.image" />
@@ -18,7 +19,12 @@
       </swiper>
     </div>
 
-    <div> {{ info.Title }} </div>
+    <div class="game-title">
+      <a :href="info.URL" target="_blank">
+      {{ info.Title }} 
+      </a>
+    </div>
+
   </div>
 </template>
 
@@ -85,45 +91,9 @@ export default {
 };
 </script>
 
-<style>
-.swiper-container {
-  @apply w-full h-full;
-}
-.swiper-slide {
-  @apply text-center text-lg bg-white;
-  @apply flex justify-center items-center;
-}
-.swiper-slide > * {
-  @apply block w-full h-full object-cover;
-}
-.swiper-container {
-  @apply mx-auto;
-}
-.swiper-button-prev:after,
-.swiper-button-next:after {
-  @apply text-xl font-black text-white;
-  @apply lg:text-5xl;
-}
-.swiper-button-prev {
-  @apply left-0;
-  @apply lg:left-3;
-}
-.swiper-button-next {
-  @apply right-0;
-  @apply lg:right-3;
-}
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-  @apply bg-white w-3 h-2 mx-0.5 rounded;
-  @apply lg:w-5 lg:h-3 lg:mx-1.5;
-}
-.swiper-pagination-bullet {
-  @apply opacity-40;
-}
-.swiper-pagination-bullet-active {
-  @apply opacity-100;
-}
-.swiper-container-horizontal > .swiper-pagination-bullets {
-  @apply bottom-0;
-  @apply lg:bottom-6;
+<style src="@/styles/Swiper.css"></style>
+<style scoped>
+.game-title {
+  @apply text-3xl;
 }
 </style>

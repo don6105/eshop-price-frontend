@@ -1,47 +1,55 @@
+.game-info-link {
+  @apply block;
+}
 .game-card {
-  @apply my-1 w-full divide-y divide-gray-400;
+  @apply flex w-full items-start mt-2 divide-y divide-blue-300;
 }
 .game-boxart {
-  @apply w-3/12 max-w-max;
-  @apply lg:w-5/12;
+  @apply inline-block;
+  @apply w-20 h-20 flex-none;
+  @apply lg:w-36 lg:h-36;
 }
 .game-boxart > img {
-  @apply h-20 w-20;
-  @apply lg:h-36 lg:w-36;
+  @apply w-20 h-20;
+  @apply lg:w-36 lg:h-36;
 }
 .game-data {
-  @apply flex flex-col relative;
-  @apply h-20 w-9/12;
-  @apply lg:h-36 lg:w-7/12;
+  @apply inline-block flex-grow px-1 h-20 relative;
+  @apply lg:px-2 lg:h-36;
 }
 .game-title {
-  @apply font-bold truncate pl-2;
-  @apply w-7/12 mb-1;
-  @apply lg:w-full lg:text-2xl lg:mb-2;
+  @apply text-xl w-52 truncate;
+  @apply lg:text-2xl lg:w-60;
 }
-.all-chinese {
-  @apply px-1 ml-2 rounded;
+
+
+.tag-group {
+  @apply block space-x-1;
+}
+.tag-group > .all-chinese {
+  @apply inline-block px-1 rounded;
   @apply bg-gray-200 text-red-600;
 }
-.lowest-price {
-  @apply px-1 ml-2 rounded;
+.tag-group > .lowest-price {
+  @apply inline-block px-1 rounded;
   @apply bg-gray-200 text-blue-600;
 }
+
 .price-group {
-  @apply absolute bottom-0 left-2;
+  @apply inline-block space-x-1 absolute bottom-0 left-1;
 }
-.sale-price {
-  @apply text-base mr-1 text-red-600;
+.price-group > .price {
+  @apply text-base text-red-600;
 }
-.msrp {
-  @apply text-xs mr-1 text-gray-400;
+.price-group > .msrp {
+  @apply text-xs text-gray-400;
 }
-.country {
+.price-group > .country {
   @apply text-sm text-gray-400;
 }
+
 .discount-box {
-  @apply bg-red-500 text-white;
-  @apply pl-2 pr-1 rounded-tl-xl;
-  @apply absolute bottom-0 right-0;
+  @apply bg-red-500 text-white absolute bottom-0 right-0;
+  @apply inline-block pl-2 pr-1 rounded-tl-xl;
   @apply lg:pl-3 lg:pr-2 lg:right-2; 
 }
