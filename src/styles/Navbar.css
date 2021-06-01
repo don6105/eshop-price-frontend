@@ -1,5 +1,5 @@
 #nav {
-  @apply w-full align-middle;
+  @apply w-full align-middle fixed top-0 z-30;
   @apply bg-gray-800 text-white;
 }
 .home-btn {
@@ -17,14 +17,14 @@
 
 /* dropdown menu */
 .dropdown-menu {
-  @apply inline-block flex float-right text-sm px-1 py-0.5;
+  @apply inline-block flex float-right text-sm px-1 py-0.5 z-30;
   @apply border-2 border-transparent;
   @apply focus:outline-none border-white;
-  @apply transition duration-150 ease-in-out;
+  @apply transition duration-1000 ease-in-out;
   @apply bg-gray-800 w-full;
-  @apply lg:mt-0.5 lg:w-2/12 lg:absolute lg:right-1.5 lg:shadow-lg lg:rounded-lg;
-  @apply lg:ring-1 lg:ring-black lg:ring-opacity-5;
-  @apply lg:bg-white;
+  @apply lg:mt-0.5 lg:w-2/12 lg:absolute lg:right-1.5;
+  @apply lg:rounded-lg lg:bg-white;
+  @apply lg:shadow-lg lg:ring-1 lg:ring-black lg:ring-opacity-20;
 }
 .dropdown-menu > div {
   @apply w-full px-1 py-2 space-y-1;
@@ -41,12 +41,14 @@
   @apply w-1/12 float-right inline-block cursor-pointer mt-2.5 mr-0.5;
   @apply lg:w-8 lg:mt-2 lg:mr-2;
 }
-.bar1, .bar2, .bar3 {
+.menu-icon .bar1,
+.menu-icon .bar2,
+.menu-icon .bar3 {
   @apply bg-white;
   margin-top: 0.25rem;
   height: 0.2rem;
   width: 1.6rem;
-  transition: 0.4s;
+  transition: 0.7s;
 }
 .active .bar1 {
   -webkit-transform: rotate(45deg) translate(0.4rem, 0.3rem);

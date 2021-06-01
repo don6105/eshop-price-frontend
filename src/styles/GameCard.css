@@ -27,11 +27,11 @@
   @apply block space-x-1;
 }
 .tag-group > .all-chinese {
-  @apply inline-block px-1 rounded;
+  @apply inline-block px-1 rounded text-sm;
   @apply bg-gray-200 text-red-600;
 }
 .tag-group > .lowest-price {
-  @apply inline-block px-1 rounded;
+  @apply inline-block px-1 rounded text-sm;
   @apply bg-gray-200 text-blue-600;
 }
 

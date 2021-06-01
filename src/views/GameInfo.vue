@@ -1,31 +1,32 @@
 <template>
-  <div class="container mx-auto px-1 lg:px-2 lg:px-4">
-    <div class="px-3 py-2 lg:px-1">
 
-      <swiper 
-        :slidesPerView="1" 
-        :spaceBetween="30" 
-        :loop="true" 
-        :centeredSlides="true" 
-        :pagination="{'clickable': true}"
-        :navigation="true"
-        :keyboard="true"
-        :initialSlide="1"
-      >
-        <swiper-slide v-for="slide in gallery" :key="slide">
-          <img v-if="slide.image" :src="slide.image" />
-          <GameVideo v-else />
-        </swiper-slide>
-      </swiper>
-    </div>
+  <div class="px-3 py-2 lg:px-1">
 
-    <div class="game-title">
-      <a :href="info.URL" target="_blank">
-      {{ info.Title }} 
-      </a>
-    </div>
-
+    <swiper 
+      :slidesPerView="1" 
+      :spaceBetween="30" 
+      :loop="true" 
+      :centeredSlides="true" 
+      :pagination="{'clickable': true}"
+      :navigation="true"
+      :keyboard="true"
+      :initialSlide="1"
+    >
+      <swiper-slide v-for="slide in gallery" :key="slide">
+        <img v-if="slide.image" :src="slide.image" />
+        <GameVideo v-else :video_src="slide.video" :audio_src="slide.audio"/>
+      </swiper-slide>
+    </swiper>
   </div>
+
+  <div class="game-title">
+    <a :href="info.URL" target="_blank">
+    {{ info.Title }} 
+    </a>
+  </div>
+
+  <div class="game-desc">{{ info.Description }}</div>
+
 </template>
 
 <script>
@@ -95,5 +96,9 @@ export default {
 <style scoped>
 .game-title {
   @apply text-3xl;
+}
+.game-desc {
+  @apply text-justify;
+  @apply lg:text-lg;
 }
 </style>

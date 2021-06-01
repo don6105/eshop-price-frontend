@@ -1,5 +1,6 @@
-#app {
-  @apply mt-5;
+.search-box {
+  @apply w-full fixed top-10 z-10 pb-1 bg-white;
+  @apply lg:mb-4;
 }
 .page-title {
   @apply text-2xl font-bold text-center my-2;
@@ -24,8 +25,8 @@
   @apply lg:w-4/12 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block;
-  @apply w-2/12;
+  @apply inline-block w-2/12;
+  @apply lg:absolute lg:right-80 lg:mt-1;
 }
 .sort-selection > select {
   margin-bottom: -0.6rem;
@@ -36,6 +37,8 @@
 .sort-selection > select > option {
   @apply text-gray-700;
 }
-.sort-selection > select > option:first-child {
-  @apply invisible;
+
+.game-list {
+  @apply grid mt-32;
+  @apply lg:grid-cols-3 mt-40;
 }
