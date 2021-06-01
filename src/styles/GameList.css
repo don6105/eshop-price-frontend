@@ -40,5 +40,5 @@
 
 .game-list {
   @apply grid mt-32;
-  @apply lg:grid-cols-3 mt-40;
+  @apply lg:grid-cols-3 lg:mt-40;
 }
