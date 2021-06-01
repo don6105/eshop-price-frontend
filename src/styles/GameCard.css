@@ -40,12 +40,15 @@
 }
 .price-group > .price {
   @apply text-base text-red-600;
+  @apply lg:text-xl;
 }
 .price-group > .msrp {
   @apply text-xs text-gray-400;
+  @apply lg:text-sm;
 }
 .price-group > .country {
   @apply text-sm text-gray-400;
+  @apply lg:text-base;
 }
 
 .discount-box {
