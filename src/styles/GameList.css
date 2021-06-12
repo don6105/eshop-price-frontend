@@ -40,6 +40,6 @@
 }
 
 .game-list {
-  @apply grid mt-32;
-  @apply lg:grid-cols-3 lg:mt-40;
+  @apply grid mt-32 w-full;
+  @apply lg:grid-cols-3 lg:mt-40 lg:space-y-1;
 }

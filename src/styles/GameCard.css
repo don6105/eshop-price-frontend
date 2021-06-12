@@ -5,26 +5,25 @@
   @apply flex w-full items-start mt-2 divide-y divide-blue-300;
 }
 .game-boxart {
-  @apply inline-block;
+  @apply flex;
   @apply w-20 h-20 flex-none;
-  @apply lg:w-36 lg:h-36;
+  @apply lg:w-32 lg:h-32;
 }
 .game-boxart > img {
-  @apply w-20 h-20;
-  @apply lg:w-36 lg:h-36;
+  @apply object-contain object-center;
 }
 .game-data {
-  @apply inline-block flex-grow px-1 h-20 relative;
-  @apply lg:px-2 lg:h-36;
+  @apply inline-block flex-grow h-20 w-full relative;
+  @apply lg:h-32;
 }
 .game-title {
-  @apply text-xl w-52 truncate;
-  @apply lg:text-2xl lg:w-60;
+  @apply text-xl w-52 truncate ml-1;
+  @apply lg:w-60;
 }
 
 
 .tag-group {
-  @apply block space-x-1;
+  @apply block space-x-1 ml-1;
 }
 .tag-group > .all-chinese {
   @apply inline-block px-1 rounded text-sm;
@@ -54,5 +53,5 @@
 .discount-box {
   @apply bg-red-500 text-white absolute bottom-0 right-0;
   @apply inline-block pl-2 pr-1 rounded-tl-xl;
-  @apply lg:pl-3 lg:pr-2 lg:right-2; 
+  @apply lg:pl-3 lg:pr-2 lg:right-1; 
 }
