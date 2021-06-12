@@ -1,7 +1,7 @@
 <template>
-  <video :id="video_id" controls muted>
-    <source :src="video_src"/>
-    <audio :id="audoi_id" controls>
+  <video controls playsinline ref="video">
+    <source :src="video_src" type="video/mp4"/>
+    <audio controls ref="audio">
       <source :src="audio_src"/>
     </audio>
   </video>
@@ -11,16 +11,10 @@
 export default {
   name: 'GameVideo',
   props: ["video_src", "audio_src"],
-  data() {
-    return {
-      video_id: Math.random().toString(36).slice(-10),
-      audoi_id: Math.random().toString(36).slice(-10)
-    }
-  },
   methods: {
     combineVideoAndAudio() {
-      let video = document.getElementById(this.video_id);
-      let audio = document.getElementById(this.audoi_id);
+      let video = this.$refs.video;
+      let audio = this.$refs.audio;
       video.onplay   = function() { audio.play();  }
       video.onpause  = function() { audio.pause(); }
       video.onseeked = function() { audio.currentTime = video.currentTime; }

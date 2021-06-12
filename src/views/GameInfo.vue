@@ -25,12 +25,13 @@
     </a>
   </div>
 
-  <div class="game-desc">{{ info.Description }}</div>
+  <GameDesc :desc="info.Description"/>
 
 </template>
 
 <script>
 import GameVideo from '@/components/GameVideo.vue'
+import GameDesc from '@/components/GameDesc.vue'
 import { API } from '@/scripts/Config.js'
 import axios from "axios"
 
@@ -45,6 +46,7 @@ SwiperCore.use([Pagination,Navigation]);
 export default {
   components: {
     GameVideo,
+    GameDesc,
     Swiper,
     SwiperSlide
   },
@@ -96,9 +98,5 @@ export default {
 <style scoped>
 .game-title {
   @apply text-3xl;
-}
-.game-desc {
-  @apply text-justify;
-  @apply lg:text-lg;
 }
 </style>
