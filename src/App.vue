@@ -58,6 +58,6 @@ export default {
 
 <style scoped>
 .container {
-  @apply mx-auto px-1 mt-12 lg:mt-16 lg:px-4;
+  @apply mx-auto px-1 mt-12 mb-12 lg:mt-16 lg:px-4;
 }
 </style>
