@@ -3,14 +3,14 @@
 }
 .game-card {
   @apply flex w-full items-start mt-2 divide-y divide-blue-300;
+  @apply lg:ml-1;
 }
 .game-boxart {
-  @apply flex;
-  @apply w-20 h-20 flex-none;
+  @apply w-20 h-20 flex flex-none p-0.5;
   @apply lg:w-32 lg:h-32;
 }
 .game-boxart > img {
-  @apply object-contain object-center;
+  @apply object-center object-fill rounded-lg;
 }
 .game-data {
   @apply inline-block flex-grow h-20 w-full relative;
@@ -35,7 +35,7 @@
 }
 
 .price-group {
-  @apply inline-block space-x-1 absolute bottom-0 left-1;
+  @apply inline-block space-x-1 absolute bottom-0.5 left-1;
 }
 .price-group > .price {
   @apply text-base text-red-600;
@@ -51,7 +51,7 @@
 }
 
 .discount-box {
-  @apply bg-red-500 text-white absolute bottom-0 right-0;
+  @apply bg-red-500 text-white absolute bottom-0.5 right-0;
   @apply inline-block pl-2 pr-1 rounded-tl-xl;
   @apply lg:pl-3 lg:pr-2 lg:right-1; 
 }
