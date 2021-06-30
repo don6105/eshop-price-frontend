@@ -10,8 +10,8 @@ export default {
     return {
       games: [],
       page: 0,
-      keyword: '',
-      order: ''
+      query: '',
+      sort: ''
     }
   },
   methods: {
@@ -35,11 +35,11 @@ export default {
     },
     getGameList() {
       let api_url = `${API}/api/v1/game?page=${this.page}`;
-      if(this.keyword != '') {
-        api_url += `&keyword=${this.keyword}`;
+      if(this.query != '') {
+        api_url += `&q=${this.query}`;
       }
-      if(this.order != '') {
-        api_url += `&order=${this.order}`;
+      if(this.sort != '') {
+        api_url += `&sort=${this.sort}`;
       }
       axios
         .get(api_url)

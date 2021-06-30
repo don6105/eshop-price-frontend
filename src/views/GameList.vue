@@ -3,13 +3,13 @@
   <div class="search-box">
     <div class="page-title">Game List</div>
     <div class="search-input">
-      <input v-model="keyword" @keyup.enter="searchGame" placeholder="Search game">
+      <input v-model="query" @keyup.enter="searchGame" placeholder="Search game">
     </div>
     <div class="search-button">
       <button v-on:click="searchGame">Submit</button>
     </div>
     <div class="sort-selection">
-      <select v-model="order" v-on:change="searchGame">
+      <select v-model="sort" v-on:change="searchGame">
         <option value="" hidden disabled selected>Sort</option>
         <option value="discount desc"> Discount </option>
         <option value="price asc"> Price 0 > 9 </option>
