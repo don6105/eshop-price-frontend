@@ -34,6 +34,6 @@
 }
 .password-eye {
   @apply inline-block;
-  @apply absolute top-10 right-4;
-  @apply lg:static lg:-ml-8;
+  @apply absolute top-9 right-2;
+  @apply lg:static lg:-ml-7;
 }
