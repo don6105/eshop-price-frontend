@@ -17,7 +17,7 @@
   @apply lg:py-2 lg:px-3;
 }
 .search-button {
-  @apply inline-block pl-2;
+  @apply inline-block pl-1;
   @apply w-3/12;
 }
 .search-button > button {
@@ -26,13 +26,13 @@
   @apply lg:w-20 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block w-2/12 -ml-1.5;
+  @apply inline-block w-2/12 -ml-2;
   @apply lg:-ml-80;
 }
 .sort-selection > select {
   margin-bottom: -0.6rem;
-  @apply w-9 h-8 pl-0 rounded-full float-right;
-  @apply lg:w-32 lg:h-9 lg:px-2 lg:py-1 lg:rounded-md;
+  @apply w-9 h-8 pl-0 -mr-1 rounded-full float-right;
+  @apply lg:w-32 lg:px-2 lg:py-1 lg:rounded-md;
   @apply text-white lg:text-gray-700;
 }
 .sort-selection > select > option {
