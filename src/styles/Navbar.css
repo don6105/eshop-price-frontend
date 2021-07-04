@@ -4,7 +4,7 @@
 }
 .home-btn {
   @apply inline-block font-bold mx-1 mt-1 text-2xl;
-  @apply lg:text-2xl lg:mx-3 lg:mt-0 lg:mb-1 lg:px-2 lg:py-1;
+  @apply lg:text-2xl lg:mx-3 lg:-mt-1.5 lg:mb-0.5 lg:px-2 lg:py-1;
   @apply rounded-lg hover:bg-gray-900;
 }
 .home-btn > img {
@@ -18,7 +18,7 @@
 /* menu icon */
 .menu-icon {
   @apply w-1/12 float-right inline-block cursor-pointer mt-2.5 mr-1.5;
-  @apply lg:w-8 lg:mt-2 lg:mr-2;
+  @apply lg:w-8 lg:mt-1 lg:mr-2;
 }
 .menu-icon .bar1,
 .menu-icon .bar2,
