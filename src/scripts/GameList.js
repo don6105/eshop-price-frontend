@@ -47,7 +47,7 @@ export default {
           this.games = this.games.concat(response.data);
           this.page += 1;
         })
-        .catch(function (error) { // 请求失败处理
+        .catch(function (error) {
           console.log(error);
         });
     },

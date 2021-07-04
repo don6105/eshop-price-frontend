@@ -18,10 +18,11 @@
 
     <div :class="{ active: showMenu }" class="dropdown-menu">
       <div>
-        <a href="#">Team</a>
-        <router-link to="/login">
+        <a href="#">About</a>
+        <router-link v-if="login_user.length === 0" to="/login">
           Login
         </router-link>
+        <a v-else @click="logout">Logout</a>
       </div>
     </div>
   </div>

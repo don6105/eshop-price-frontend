@@ -1,6 +1,6 @@
 .search-box {
   @apply w-full fixed top-10 left-0 z-10 pb-1 bg-white;
-  @apply lg:mb-4;
+  @apply lg:pb-4;
 }
 .page-title {
   @apply text-2xl font-bold text-center my-2;

@@ -83,7 +83,7 @@ export default {
           this.info    = response.data;
           this.gallery = this.getGallery(this.info);
         })
-        .catch(function (error) { // 请求失败处理
+        .catch(function (error) {
           console.log(error);
         });
     }

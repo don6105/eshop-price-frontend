@@ -1,6 +1,10 @@
+.welcome-msg {
+  @apply w-full mx-auto mt-56 text-center text-2xl;
+  @apply lg:w-1/2 lg:text-4xl;
+}
 .wallpaper {
-  @apply block px-2 pt-4 w-full mx-auto; 
-  @apply lg:w-1/2 lg:mt-40 lg:px-10 lg:py-8 lg:pb-20;
+  @apply block w-full mx-auto px-2 pt-4; 
+  @apply lg:w-1/2 lg:mt-40 lg:px-10 lg:pt-6 lg:pb-12;
   @apply lg:bg-gray-800 lg:rounded-xl;
 }
 .title {
@@ -12,7 +16,14 @@
   @apply lg:w-auto lg:mb-5 lg:static;
 }
 .input-group:last-child {
-  @apply lg:float-right;
+  @apply lg:float-right lg:-mt-8;
+}
+.login-msg {
+  @apply block text-lg text-red-500 invisible;
+  @apply lg:mt-8 lg:text-yellow-400;
+}
+.login-msg.show {
+  @apply visible;
 }
 .input-group > label {
   @apply block w-full text-lg;
