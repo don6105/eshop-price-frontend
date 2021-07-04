@@ -18,7 +18,9 @@
     <div v-show="showMenu" class="dropdown-menu">
       <div>
         <a href="#">Team</a>
-        <a href="#">Login</a>
+        <router-link to="/login">
+          Login
+        </router-link>
       </div>
     </div>
   </div>

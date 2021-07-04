@@ -21,7 +21,7 @@
   @apply w-3/12;
 }
 .search-button > button {
-  @apply inline-block rounded-md py-1 px-1 w-full;
+  @apply inline-block rounded-md py-1 px-1 w-full shadow-md;
   @apply bg-blue-500 hover:bg-blue-600 text-white;
   @apply lg:w-20 lg:py-1;
 }

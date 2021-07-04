@@ -1,6 +1,6 @@
 #nav {
   @apply w-full align-middle fixed top-0 z-30;
-  @apply bg-gray-800 text-white;
+  @apply bg-gray-900 text-white;
 }
 .home-btn {
   @apply inline-block font-bold mx-1 mt-1 text-2xl;
@@ -48,7 +48,7 @@
   @apply border-2 border-transparent;
   @apply focus:outline-none border-white;
   @apply transition duration-1000 ease-in-out;
-  @apply bg-gray-700 w-full;
+  @apply bg-gray-900 w-full;
   @apply lg:mt-0.5 lg:w-2/12 lg:absolute lg:right-1.5;
   @apply lg:rounded-lg lg:bg-white;
   @apply lg:shadow-lg lg:ring-1 lg:ring-black lg:ring-opacity-20;
