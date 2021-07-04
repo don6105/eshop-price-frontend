@@ -3,9 +3,7 @@
     class="desc-container"
     :class="{ expand: showDesc }"  
     v-on:click="showDesc = !showDesc">
-    <div class="desc-text">
-      {{ desc }}
-    </div>
+    <div class="desc-text" v-html="desc"> </div>
     <div class="desc-mask" />
   </div>
 </template>
