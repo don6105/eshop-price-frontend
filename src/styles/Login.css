@@ -1,0 +1,39 @@
+.wallpaper {
+  @apply block px-2 pt-4 w-full mx-auto; 
+  @apply lg:w-1/2 lg:mt-40 lg:px-10 lg:py-8 lg:pb-20;
+  @apply lg:bg-gray-800 lg:rounded-xl;
+}
+.title {
+  @apply text-xl font-bold mb-4;
+  @apply lg:text-2xl lg:text-white lg:mb-6;
+}
+.input-group {
+  @apply block w-full mb-3 relative;
+  @apply lg:w-auto lg:mb-5 lg:static;
+}
+.input-group:last-child {
+  @apply lg:float-right;
+}
+.input-group > label {
+  @apply block w-full text-lg;
+  @apply lg:mb-0 lg:w-3/12 lg:inline-block lg:text-white;
+}
+.login-email, .login-password {
+  @apply block w-full h-10 px-4;
+  @apply lg:inline-block lg:w-9/12;
+  @apply rounded-md border border-gray-400;
+}
+.warning {
+  @apply border-4 border-red-500;
+}
+.login-btn {
+  @apply rounded-md w-full px-1 py-2 mt-3;
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+  @apply lg:bg-gray-50 lg:hover:bg-gray-100 lg:text-black;
+  @apply lg:w-40 lg:rounded-3xl lg:mt-1;
+}
+.password-eye {
+  @apply inline-block;
+  @apply absolute top-10 right-4;
+  @apply lg:static lg:-ml-8;
+}
