@@ -21,12 +21,12 @@
   @apply w-3/12;
 }
 .search-button > button {
-  @apply inline-block rounded-md py-1 px-1 w-full shadow-md;
+  @apply inline-block rounded-md py-0.5 px-0.5 w-full shadow-md;
   @apply bg-blue-500 hover:bg-blue-600 text-white;
   @apply lg:w-20 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block w-2/12 -ml-2;
+  @apply inline-block w-2/12 -ml-1.5;
   @apply lg:-ml-80;
 }
 .sort-selection > select {
