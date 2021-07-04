@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" v-click-away="closeMenu">
+  <div id="nav">
     <router-link to="/" class="home-btn">
       <img src="@/assets/rabbit.png"/>
       <div>Home</div>
@@ -9,6 +9,7 @@
       class="menu-icon" 
       :class="{ active: showMenu }" 
       v-on:click="showMenu = !showMenu"
+      v-click-away="closeMenu"
     >
       <div class="bar1"></div>
       <div class="bar2"></div>
