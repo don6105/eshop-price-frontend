@@ -15,7 +15,7 @@
       <div class="bar3"></div>
     </div>
 
-    <div v-show="showMenu" class="dropdown-menu">
+    <div :class="{ active: showMenu }" class="dropdown-menu">
       <div>
         <a href="#">Team</a>
         <router-link to="/login">

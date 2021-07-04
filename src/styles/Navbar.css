@@ -44,13 +44,20 @@
 
 /* dropdown menu */
 .dropdown-menu {
-  @apply inline-block flex float-right text-sm px-1 py-0.5 z-30;
-  @apply border-2 border-transparent;
-  @apply focus:outline-none border-white;
-  @apply transition duration-1000 ease-in-out;
+  @apply inline-block flex float-right text-sm z-30;
+  @apply focus:outline-none;
   @apply bg-gray-900 w-full;
-  @apply lg:mt-0.5 lg:w-2/12 lg:absolute lg:right-1.5;
+  @apply lg:w-2/12 lg:absolute lg:right-1.5;
   @apply lg:rounded-lg lg:bg-white;
+
+  /* animate */
+  @apply transition-all duration-700 ease-out;
+  @apply h-0 overflow-hidden origin-top scale-y-0;
+}
+.dropdown-menu.active {
+  @apply px-1 py-0.5;
+  @apply border-2 border-transparent border-white;
+  @apply h-auto scale-75;
   @apply lg:shadow-lg lg:ring-1 lg:ring-black lg:ring-opacity-20;
 }
 .dropdown-menu > div {
