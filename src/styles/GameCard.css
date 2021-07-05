@@ -1,8 +1,8 @@
 .game-info-link {
-  @apply block;
+  @apply block p-1 rounded-md;
 }
 .game-card {
-  @apply flex w-full items-start mt-2 divide-y divide-blue-300;
+  @apply flex w-full items-start bg-white rounded-md;
   @apply lg:ml-1;
 }
 .game-boxart {
@@ -10,7 +10,7 @@
   @apply lg:w-32 lg:h-32;
 }
 .game-boxart > img {
-  @apply object-center object-fill rounded-lg;
+  @apply object-center object-fill rounded-md;
 }
 .game-data {
   @apply inline-block flex-grow h-20 w-full relative;
@@ -18,7 +18,7 @@
 }
 .game-title {
   @apply text-xl w-52 truncate ml-1;
-  @apply lg:w-60;
+  @apply lg:w-56;
 }
 
 

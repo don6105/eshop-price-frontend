@@ -35,7 +35,10 @@
 
 <style src="@/styles/Navbar.css"></style>
 
-<style scoped>
+<style>
+html, body {
+  @apply bg-gray-100;
+}
 .container {
   @apply mx-auto px-1 mt-12 mb-12 lg:mt-16;
 }
