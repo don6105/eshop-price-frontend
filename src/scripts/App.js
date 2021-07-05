@@ -1,12 +1,8 @@
-import LoadingIcon from '@/components/LoadingIcon.vue'
 import { API } from '@/scripts/Config.js'
 import axios from "axios"
 
 export default {
   name: "App",
-  components: {
-    LoadingIcon
-  },
   data() {
     return {
       login_user: '',
@@ -47,9 +43,9 @@ export default {
     const menu_item = document.querySelectorAll('.home-btn, .dropdown-menu a');
     let _this = this;
     for(let i = 0; i < menu_item.length; i++) {
-    menu_item[i].addEventListener('click', function(){
-      _this.showMenu = false;
-    });
+      menu_item[i].addEventListener('click', function(){
+        _this.showMenu = false;
+      });
     }
   },
 };
