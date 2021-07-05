@@ -5,19 +5,18 @@
       <div>Home</div>
     </router-link>
 
-    <div 
-      class="menu-icon" 
-      :class="{ active: showMenu }" 
-      v-on:click="showMenu = !showMenu"
-      v-click-away="closeMenu"
-    >
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
-    </div>
+    <div class="menu-btn" v-click-away="closeMenu">
+      <div 
+        class="menu-icon" 
+        :class="{ active: showMenu }" 
+        v-on:click="showMenu = !showMenu"
+      >
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
 
-    <div :class="{ active: showMenu }" class="dropdown-menu">
-      <div>
+      <div :class="{ active: showMenu }" class="dropdown-menu">
         <a href="#">About</a>
         <router-link v-if="login_user.length === 0" to="/login">
           Login

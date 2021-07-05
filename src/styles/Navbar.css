@@ -16,9 +16,12 @@
 }
 
 /* menu icon */
+.menu-btn {
+  @apply float-right inline-block w-6 mt-2.5 mr-3.5;
+  @apply lg:mt-1 lg:mr-3;
+}
 .menu-icon {
-  @apply w-1/12 float-right inline-block cursor-pointer mt-2.5 mr-1.5;
-  @apply lg:w-8 lg:mt-1 lg:mr-2;
+  @apply w-8 inline-block cursor-pointer;
 }
 .menu-icon .bar1,
 .menu-icon .bar2,
@@ -44,24 +47,27 @@
 
 /* dropdown menu */
 .dropdown-menu {
-  @apply inline-block flex float-right text-sm z-30;
+  @apply block float-right text-sm z-30 rounded-md mt-2;
   @apply focus:outline-none;
-  @apply bg-gray-900 w-full;
-  @apply lg:w-2/12 lg:absolute lg:right-1.5;
-  @apply lg:rounded-lg lg:bg-white;
+  @apply w-screen bg-gray-900 absolute left-0;
+  @apply lg:w-2/12 lg:mt-2.5;
+  @apply lg:rounded-lg lg:bg-white lg:left-auto lg:right-0.5;
 
   /* animate */
-  @apply transition-all duration-1000 ease-linear;
-  @apply h-0 overflow-hidden origin-top scale-y-0;
+  @apply transform transition-transform duration-700 ease-in-out;
+  @apply overflow-hidden origin-top scale-y-0;
 }
 .dropdown-menu.active {
-  @apply px-1 py-0.5;
-  @apply border-2 border-transparent border-white;
-  @apply h-auto scale-75;
+  @apply px-1 py-2 space-y-1;
+  @apply border-2 border-transparent;
+  @apply h-auto scale-y-100;
   @apply lg:shadow-lg lg:ring-1 lg:ring-black lg:ring-opacity-20;
 }
+.dropdown-menu > * {
+  @apply hover:bg-white;
+}
 .dropdown-menu > div {
-  @apply w-full px-1 py-2 space-y-1;
+  @apply w-full px-1 py-2 space-y-1 transform-none;
 }
 .dropdown-menu a {
   @apply block w-full px-3 py-2 rounded-md text-base font-medium;
