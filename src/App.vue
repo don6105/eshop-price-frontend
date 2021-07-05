@@ -22,7 +22,9 @@
         <router-link v-if="login_user.length === 0" to="/login">
           Login
         </router-link>
-        <a v-else @click="logout">Logout</a>
+        <a v-else @click="logout">
+          Logout <LoadingIcon/>
+        </a>
       </div>
     </div>
   </div>

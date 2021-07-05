@@ -1,8 +1,9 @@
 .desc-container {
   @apply relative overflow-hidden h-20 cursor-pointer;
+  @apply transition-all duration-1000 ease-in-out scale-y-0;
 }
-.expand.desc-container {
-  @apply h-auto overflow-visible;
+.desc-container.expand {
+  @apply h-auto scale-y-75;
 }
 .desc-text {
   @apply text-justify max-h-12 overflow-hidden text-gray-600 text-base;

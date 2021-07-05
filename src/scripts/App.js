@@ -1,8 +1,12 @@
+import LoadingIcon from '@/components/LoadingIcon.vue'
 import { API } from '@/scripts/Config.js'
 import axios from "axios"
 
 export default {
   name: "App",
+  components: {
+    LoadingIcon
+  },
   data() {
     return {
       login_user: '',

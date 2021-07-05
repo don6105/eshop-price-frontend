@@ -51,7 +51,7 @@
   @apply lg:rounded-lg lg:bg-white;
 
   /* animate */
-  @apply transition-all duration-700 ease-out;
+  @apply transition-all duration-1000 ease-linear;
   @apply h-0 overflow-hidden origin-top scale-y-0;
 }
 .dropdown-menu.active {
