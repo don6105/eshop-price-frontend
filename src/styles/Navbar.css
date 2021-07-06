@@ -12,7 +12,8 @@
   @apply lg:w-8 lg:h-8 lg:-mt-1 lg:mb-0 pr-0.5;
 }
 .home-btn > div {
-  @apply inline-block lg:h-8;
+  @apply hidden;
+  @apply lg:h-8 lg:inline-block;
 }
 
 /* menu icon */

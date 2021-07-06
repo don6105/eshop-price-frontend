@@ -1,6 +1,9 @@
 .search-box {
-  @apply w-full fixed top-9 left-0 z-10 pb-1 bg-gray-100;
-  @apply lg:pb-2;
+  @apply w-full fixed top-9 left-0 z-10 pb-1 bg-gray-100 shadow-md;
+  @apply lg:pb-2 lg:px-4;
+}
+.search-box > div {
+  @apply my-0;
 }
 .page-title {
   @apply text-2xl font-bold text-center my-2;
@@ -8,7 +11,7 @@
 }
 .search-input {
   @apply inline-block w-7/12 pl-0 ml-1;
-  @apply lg:ml-40;
+  @apply lg:ml-16 ;
 }
 .search-input > input {
   @apply inline-block rounded-md border border-gray-400;
@@ -18,21 +21,21 @@
 }
 .search-button {
   @apply inline-block pl-1;
-  @apply w-3/12;
 }
 .search-button > button {
-  @apply inline-block rounded-md py-0.5 px-0.5 w-full shadow-md;
+  @apply inline-block rounded-md py-0.5 px-0.5 w-16 shadow-md;
   @apply bg-blue-500 hover:bg-blue-600 text-white;
   @apply lg:w-20 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block w-2/12 -ml-2;
-  @apply lg:-ml-80;
+  @apply inline-block w-2/12 ml-2;
 }
 .sort-selection > select {
   margin-bottom: -0.6rem;
-  @apply w-9 h-8 pl-0 -mr-1 rounded-full float-right;
-  @apply lg:w-32 lg:px-2 lg:py-1 lg:rounded-md;
+  @apply w-9 h-8 pl-0 rounded-full float-right;
+  @apply md:w-24;
+  @apply lg:px-2 lg:py-1 lg:rounded-md;
+  @apply xl:w-32;
   @apply text-white lg:text-gray-700;
 }
 .sort-selection > select > option {

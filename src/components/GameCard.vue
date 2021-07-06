@@ -22,7 +22,8 @@
             <span class="country">(美國)</span>
           </div>
           <div v-if="game.Discount > 0" class="discount-box">
-            {{ game.Discount }}% 折扣
+            {{ game.Discount }}% 
+            <span>折扣</span>
           </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 .game-info-link {
-  @apply block p-1 rounded-md;
+  @apply block p-1 rounded-md overflow-x-hidden;
 }
 .game-card {
   @apply flex w-full items-start bg-white rounded-md;
@@ -7,18 +7,24 @@
 }
 .game-boxart {
   @apply w-20 h-20 flex flex-none p-0.5;
-  @apply lg:w-32 lg:h-32;
+  @apply lg:w-20 lg:h-20;
+  @apply xl:w-28 xl:h-28;
+  @apply 2xl:w-32 2xl:h-32;
 }
 .game-boxart > img {
   @apply object-center object-fill rounded-md;
 }
 .game-data {
   @apply inline-block flex-grow h-20 w-full relative;
-  @apply lg:h-32;
+  @apply lg:h-20;
+  @apply xl:h-28;
+  @apply 2xl:h-32;
 }
 .game-title {
-  @apply text-xl w-52 truncate ml-1;
-  @apply lg:w-56;
+  @apply text-xl w-52 truncate ml-1 w-full;
+  @apply lg:w-40 lg:text-base;
+  @apply xl:w-44;
+  @apply 2xl:w-56 2xl:text-xl;
 }
 
 
@@ -27,6 +33,7 @@
 }
 .tag-group > .all-chinese {
   @apply inline-block px-1 rounded text-sm;
+  @apply md:text-xs;
   @apply bg-gray-200 text-red-600;
 }
 .tag-group > .lowest-price {
@@ -39,19 +46,26 @@
 }
 .price-group > .price {
   @apply text-base text-red-600;
-  @apply lg:text-xl;
+  @apply 2xl:text-xl;
 }
 .price-group > .msrp {
   @apply text-xs text-gray-400;
-  @apply lg:text-sm;
+  @apply 2xl:text-sm;
 }
 .price-group > .country {
   @apply text-sm text-gray-400;
-  @apply lg:text-base;
+  @apply 2xl:text-base;
 }
 
 .discount-box {
   @apply bg-red-500 text-white absolute bottom-0.5 right-0;
-  @apply inline-block pl-2 pr-1 rounded-tl-xl;
-  @apply lg:pl-3 lg:pr-2 lg:right-1; 
+  @apply inline-block pl-2 pr-1 rounded-tl-xl rounded-br-md;
+  @apply md:right-0;
+  @apply lg:right-6;
+  @apply xl:right-8 xl:pr-4;
+  @apply 2xl:pl-3 2xl:pr-2 2xl:right-0;
+}
+.discount-box > span {
+  @apply md:hidden;
+  @apply 2xl:inline-block;
 }
