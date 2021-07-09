@@ -1,8 +1,9 @@
 import { createWebHistory, createRouter } from "vue-router";
-import GameList from "@/views/GameList.vue";
-import GameInfo from "@/views/GameInfo.vue";
-import Login    from "@/views/Login.vue";
-import NotFound from "@/views/NotFound.vue";
+import GameList  from "@/views/GameList.vue";
+import GameInfo  from "@/views/GameInfo.vue";
+import GameGroup from "@/views/GameGroup.vue";
+import Login     from "@/views/Login.vue";
+import NotFound  from "@/views/NotFound.vue";
 
 const routes = [
   {
@@ -17,9 +18,14 @@ const routes = [
     props: true,
   },
   {
+    path: '/admin/game/group',
+    name: 'GameGroup',
+    component: GameGroup
+  },
+  {
     path: "/login",
     name: "Login",
-    component:  Login
+    component: Login
   },
   {
     path: "/:catchAll(.*)",

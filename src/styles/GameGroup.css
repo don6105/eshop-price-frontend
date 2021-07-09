@@ -1,0 +1,16 @@
+.page-title {
+  @apply text-2xl font-bold text-center my-2;
+  @apply lg:text-4xl lg:my-4;
+}
+.row-box {
+  @apply w-1/2 h-full inline-block px-2 pb-2;
+}
+.data-box {
+  @apply rounded-lg border-4;
+  @apply p-3 overflow-y-auto;
+}
+
+.search-input {
+  @apply inline-block h-8 w-60; 
+  @apply rounded-md border border-gray-400;
+}

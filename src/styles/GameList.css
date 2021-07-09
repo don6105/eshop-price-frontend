@@ -28,7 +28,8 @@
   @apply lg:w-20 lg:py-1;
 }
 .sort-selection {
-  @apply inline-block w-2/12 ml-2;
+  @apply inline-block w-2/12;
+  @apply md:ml-2;
 }
 .sort-selection > select {
   margin-bottom: -0.6rem;
@@ -43,6 +44,6 @@
 }
 
 .game-list {
-  @apply grid mt-32 w-full;
-  @apply lg:grid-cols-3 lg:mt-40;
+  @apply grid mt-20 w-full;
+  @apply lg:grid-cols-3 lg:mt-28 lg:pt-2;
 }

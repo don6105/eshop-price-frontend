@@ -1,6 +1,6 @@
 <template>
   <router-link 
-    :to="{name: 'GameInfo', params: {summary_id: game.ID}}" 
+    :to="{name: 'GameInfo', params: {summary_id: game.GroupID}}" 
     draggable="false"
     class="game-info-link"
   >

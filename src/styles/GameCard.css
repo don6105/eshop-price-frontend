@@ -21,7 +21,7 @@
   @apply 2xl:h-32;
 }
 .game-title {
-  @apply text-xl w-52 truncate ml-1 w-full;
+  @apply text-xl truncate ml-1 w-48;
   @apply lg:w-40 lg:text-base;
   @apply xl:w-44;
   @apply 2xl:w-56 2xl:text-xl;

@@ -1,6 +1,8 @@
 <template>
   <div id="nav">
-    <router-link to="/" class="home-btn">
+    <router-link 
+      :to="{name: 'GameList'}" 
+      class="home-btn">
       <img src="@/assets/rabbit.png"/>
       <div>Home</div>
     </router-link>
@@ -18,10 +20,22 @@
 
       <div :class="{ active: showMenu }" class="dropdown-menu">
         <a href="#">About</a>
-        <router-link v-if="login_user.length === 0" to="/login">
+        
+        <router-link 
+          v-if="login_user.length > 0" 
+          :to="{name: 'GameGroup'}"
+        >
+          Admin:GameGroup
+        </router-link>
+
+        <a v-if="login_user.length > 0" @click="logout">Logout</a>
+        
+        <router-link 
+          v-if="login_user.length === 0" 
+          :to="{name: 'Login'}"
+        >
           Login
         </router-link>
-        <a v-else @click="logout">Logout</a>
       </div>
     </div>
   </div>
@@ -35,10 +49,13 @@
 <style src="@/styles/Navbar.css"></style>
 
 <style>
-html, body {
-  @apply bg-gray-100;
+html, body , #app {
+  @apply w-full h-full bg-gray-100;
+}
+body {
+  @apply pt-10;
 }
 .container {
-  @apply mx-auto px-1 mt-12 mb-12 lg:mt-16;
+  @apply mx-auto pt-2 px-1;
 }
 </style>
