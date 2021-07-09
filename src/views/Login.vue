@@ -91,8 +91,8 @@ export default {
       return true;
     },
     clearLogin() {
-      localStorage.removeItem('token');
-      localStorage.removeItem('login_user');
+      this.$cookies.remove('token');
+      this.$cookies.remove('login_user');
       this.login_user = '';
     },
     login() {
@@ -107,10 +107,12 @@ export default {
           .post(api_url, data)
           .then((response) => {
             try {
-              let token = response.data.success.token;
-              let user  = response.data.success.user;
-              localStorage.setItem('token', token);
-              localStorage.setItem('login_user', user);
+              let token  = response.data.success.token;
+              let user   = response.data.success.user;
+              let expire = response.data.success.expire;
+              expire = new Date(expire).toUTCString();
+              _this.$cookies.set('token',      token, expire);
+              _this.$cookies.set('login_user', user,  expire);
               _this.login_user = user;
               setTimeout(() => {
                 location.href = _this.prevRoute.path;
@@ -128,7 +130,7 @@ export default {
     }
   },
   mounted() {
-    let login_user = localStorage.getItem('login_user');
+    let login_user = this.$cookies.get('login_user');
     this.login_user = (login_user !== null)? login_user : '';
   },
   beforeRouteEnter(to, from, next) {

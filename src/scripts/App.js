@@ -16,14 +16,14 @@ export default {
       }
     },
     clearLogin() {
-      localStorage.removeItem('login_user');
-      localStorage.removeItem('token');
+      this.$cookies.remove('token');
+      this.$cookies.remove('login_user');
       this.login_user = "";
     },
     logout() {
       let _this   = this;
       let api_url = `${API}/api/v1/logout`;
-      let token   = localStorage.getItem('token');
+      let token   = this.$cookies.get('token');
       let headers = {
         "Accept"       : "application/json",
         "Authorization": `Bearer ${token}`
@@ -37,7 +37,7 @@ export default {
     }
   },
   mounted() {
-    let login_user = localStorage.getItem('login_user');
+    let login_user = this.$cookies.get('login_user');
     this.login_user = (login_user !== null)? login_user : '';
 
     const menu_item = document.querySelectorAll('.home-btn, .dropdown-menu a');
