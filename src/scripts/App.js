@@ -39,13 +39,14 @@ export default {
   mounted() {
     let login_user = this.$cookies.get('login_user');
     this.login_user = (login_user !== null)? login_user : '';
-
-    const menu_item = document.querySelectorAll('.home-btn, .dropdown-menu a');
+  },
+  updated() {
+    let menu_item = document.querySelectorAll('.dropdown-menu > *');
     let _this = this;
     for(let i = 0; i < menu_item.length; i++) {
       menu_item[i].addEventListener('click', function(){
         _this.showMenu = false;
       });
     }
-  },
+  }
 };
