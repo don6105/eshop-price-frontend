@@ -1,32 +1,49 @@
 .summary-card {
-  @apply w-full flex flex-row mt-2;
+  @apply w-full h-16 flex flex-row mt-2;
   @apply rounded-md border-2 border-blue-600 bg-white;
 }
-.summary-card:drop {
-  @apply bg-gray-700;
+.summary-card.left-out {
+  @apply transform transition-transform duration-150 ease-in;
+  @apply -translate-x-full;
+}
+.summary-card.right-out {
+  @apply transform transition-transform duration-150 ease-linear;
+  @apply translate-x-full;
 }
 .summary-action {
   @apply flex flex-shrink-0 p-1;
 }
 .summary-action > button {
-  @apply h-full w-9 rounded-md;
+  @apply h-full w-9 rounded-md object-fill;
   @apply bg-blue-400 hover:bg-blue-500;
+  @apply focus:outline-none focus:ring focus:border-blue-300
 }
 .boxart-box {
   @apply flex flex-shrink-0 p-1;
 }
 .boxart-box > img {
-  @apply w-20 h-20 rounded-md;
+  @apply h-full rounded-md;
+  aspect-ratio: 1 / 1;
 }
 .summary-box {
-  @apply flex flex-grow flex-wrap;
+  @apply flex flex-grow flex-col px-1 overflow-x-hidden;
 }
 .game-title {
-  @apply block w-full text-xl;
+  @apply block max-w-max text-lg whitespace-nowrap overflow-x-hidden;
+}
+.game-title:hover {
+  @apply transform transition-transform duration-1000 ease-in delay-500;
+  @apply overflow-x-visible -translate-x-32;
 }
 .game-country {
-  @apply block px-3 h-6 text-lg leading-6;
-  @apply rounded-md;
+  @apply inline-block h-5 max-w-max px-3 mr-2 rounded-md;
+  @apply text-lg leading-4;
 }
-
-
+.game-group {
+  @apply inline-block h-5 max-w-max px-3 mr-2 rounded-md;
+  @apply text-lg leading-4;
+  @apply bg-gray-700 text-white;
+}
+.game-group.active {
+  @apply bg-gray-100 text-gray-500;
+}

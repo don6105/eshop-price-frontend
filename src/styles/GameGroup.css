@@ -14,3 +14,39 @@
   @apply inline-block h-8 w-60; 
   @apply rounded-md border border-gray-400;
 }
+.search-btn {
+  @apply ml-1.5 px-1.5 py-0.5;
+  @apply rounded-md bg-blue-500 text-white;
+  @apply hover:bg-blue-600;
+  @apply focus:outline-none focus:ring focus:border-blue-300;
+}
+
+.group-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  @apply text-sm;
+}
+.group-input::-moz-placeholder { /* Firefox 19+ */
+  @apply text-sm;
+}
+.group-input:-ms-input-placeholder { /* IE 10+ */
+  @apply text-sm;
+}
+.group-input:-moz-placeholder { /* Firefox 18- */
+  @apply text-sm;
+}
+.group-input {
+  @apply inline-block h-7 w-20 ml-3;
+  @apply rounded-l-md border-gray-400;
+  @apply focus:outline-none focus:ring-1 focus:border-blue-300;
+}
+.group-btn {
+  @apply h-7 pl-1 pr-1.5;
+  @apply rounded-r-md bg-purple-600 text-white;
+  @apply focus:outline-none focus:ring-2 focus:border-purple-400;
+}
+
+.card-container {
+  height: calc(100% - 2.5rem);
+  @apply overflow-y-auto overflow-x-hidden;
+}
+
+
