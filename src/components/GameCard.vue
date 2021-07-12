@@ -1,29 +1,34 @@
 <template>
   <router-link 
-    :to="{name: 'GameInfo', params: {summary_id: game.GroupID}}" 
+    :to="{name: 'GameInfo', params: {group_id: summary.GroupID}}" 
     draggable="false"
     class="game-info-link"
   >
     <div class="game-card">
       <div class="game-boxart">
-        <img v-if="game.Boxart" :src="game.Boxart"/>
+        <img v-if="summary.Boxart" :src="summary.Boxart"/>
         <img v-else src="@/assets/error-img.jpeg"/>
       </div>
 
       <div class="game-data">
-          <div class="game-title">{{ game.Title }}</div>
+          <div class="game-title">{{ summary.Title }}</div>
           <div class="tag-group">
             <span class="all-chinese">全區中文</span>
-            <span v-if="game.IsLowestPrice == 1" class="lowest-price">史低</span>
+            <span v-if="summary.IsLowestPrice == 1" class="lowest-price">史低</span>
           </div>
           <div class="price-group">
-            <span class="price">{{ game.Price }}</span> 
-            <s v-if="game.Price != game.MSRP" class="msrp">{{ game.MSRP }}</s>
-            <span class="country">(美國)</span>
+            <span class="price">{{ summary.MinPrice }}</span> 
+            <s 
+              v-if="summary.MinPrice != summary.MinMSRP" 
+              class="msrp"
+            >
+              {{ summary.MinMSRP }}
+            </s>
+            <span class="country">({{ summary.MinCountry }})</span>
           </div>
-          <div v-if="game.Discount > 0" class="discount-box">
-            {{ game.Discount }}% 
-            <span>折扣</span>
+          <div v-if="summary.MinDiscount > 0" class="discount-box">
+            {{ summary.MinDiscount }}% 
+            <span>off</span>
           </div>
       </div>
     </div>
@@ -34,7 +39,7 @@
 export default {
   name: 'GameList',
   props: {
-    game: Object
+    summary: Object
   }
 }
 </script>

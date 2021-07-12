@@ -50,7 +50,7 @@ export default {
     Swiper,
     SwiperSlide
   },
-  props: ["summary_id"],
+  props: ["group_id"],
   data() {
     return {
       info: {},
@@ -76,7 +76,7 @@ export default {
       return gallery;
     },
     getGameList() {
-      let api_url = `${API}/api/v1/game/${this.summary_id}`;
+      let api_url = `${API}/api/v1/summary/${this.group_id}`;
       axios
         .get(api_url)
         .then((response) => { 

@@ -45,7 +45,7 @@
   @apply text-gray-700;
 }
 
-.game-list {
+.summary-list {
   @apply grid mt-20 w-full;
   @apply lg:grid-cols-3 lg:mt-28 lg:pt-2;
 }

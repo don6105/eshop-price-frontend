@@ -12,7 +12,7 @@ const routes = [
     component: GameList,
   },
   {
-    path: "/info/:summary_id",
+    path: "/info/:group_id",
     name: "GameInfo",
     component: GameInfo,
     props: true,

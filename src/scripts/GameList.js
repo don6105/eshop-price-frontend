@@ -8,10 +8,11 @@ export default {
   },
   data() {
     return {
-      games: [],
+      summarys: [],
       page: 0,
       query: '',
-      sort: ''
+      sort: '',
+      end_of_data: false
     }
   },
   methods: {
@@ -29,27 +30,31 @@ export default {
         localStorage.removeItem(k);
       }
     },
-    clearGameList() {
-      this.games = [];
-      this.page  = 0;
+    clearSummaryList() {
+      this.summarys    = [];
+      this.page        = 0;
+      this.end_of_data = false;
     },
-    getGameList() {
-      let api_url = `${API}/api/v1/game?page=${this.page}`;
+    getSummaryList() {
+      let api_url = `${API}/api/v1/summary?page=${this.page}`;
       if(this.query != '') {
-        api_url += `&q=${this.query}`;
+        api_url += `&query=${this.query}`;
       }
       if(this.sort != '') {
         api_url += `&sort=${this.sort}`;
       }
       axios
-        .get(api_url)
-        .then((response) => { 
-          this.games = this.games.concat(response.data);
-          this.page += 1;
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+      .get(api_url)
+      .then((response) => {
+        if(response.data.length === 0) {
+          this.end_of_data = true;
+        }
+        this.summarys = this.summarys.concat(response.data);
+        this.page     += 1;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     },
     isBottom() {
       let scrollTop    = document.documentElement.scrollTop || document.body.scrollTop;
@@ -57,19 +62,22 @@ export default {
       let scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
       return (scrollTop + windowHeight) == scrollHeight;
     },
-    searchGame() {
-      this.clearGameList();
-      this.getGameList();
+    searchSummary() {
+      this.clearSummaryList();
+      this.getSummaryList();
     }
   },
   mounted() {
     this.getPersistPageData();
-    if(this.games === null || this.games.length === 0) {
-      this.getGameList();
+    if(this.summarys === null || this.summarys.length === 0) {
+      this.getSummaryList();
     }
     let _this = this;
-    window.onscroll = function(){
-      _this.isBottom() && _this.getGameList();
+    window.onscroll = function() {
+      (_this.summarys.length > 0) 
+        && !this.end_of_data 
+        && _this.isBottom() 
+        && _this.getSummaryList();
     }
   },
   beforeRouteLeave() {
