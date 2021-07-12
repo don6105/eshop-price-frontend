@@ -1,5 +1,9 @@
 <template>
-  <div class="summary-card" ref="el_card">
+  <div 
+    class="summary-card" 
+    :class="{ grouped: (summary.GroupID > 0 && direction === 'left') }" 
+    ref="el_card"
+  >
     <div v-if="direction === 'left'" class="summary-action">
       <button @click="removeFromSummarys">
         <svg width="50" height="100" viewBox="0 0 50 135" preserveAspectRatio="xMidYMid meet">
@@ -20,7 +24,7 @@
         <div class="game-country" :class="country_color[summary.Country]">
           {{ summary.Country }}
         </div>
-        <div class="game-group" :class="{ active: (summary.GroupID > 0) }">
+        <div class="game-group">
           {{ summary.GroupID }}
         </div>
       </div>

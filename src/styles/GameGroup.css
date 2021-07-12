@@ -11,8 +11,12 @@
 }
 
 .search-input {
-  @apply inline-block h-8 w-60; 
-  @apply rounded-md border border-gray-400;
+  @apply inline-block h-8 w-52; 
+  @apply rounded-l-md border border-gray-400;
+}
+.groupid-input {
+  @apply inline-block h-8 w-20 text-center;
+  @apply rounded-r-md border border-gray-400; 
 }
 .search-btn {
   @apply ml-1.5 px-1.5 py-0.5;
@@ -21,27 +25,46 @@
   @apply focus:outline-none focus:ring focus:border-blue-300;
 }
 
-.group-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+.group-apply-input::-webkit-input-placeholder,
+.groupid-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   @apply text-sm;
 }
-.group-input::-moz-placeholder { /* Firefox 19+ */
+.group-apply-input::-moz-placeholder,
+.groupid-input::-webkit-input-placeholder { /* Firefox 19+ */
   @apply text-sm;
 }
-.group-input:-ms-input-placeholder { /* IE 10+ */
+.group-apply-input:-ms-input-placeholder,
+.groupid-input::-webkit-input-placeholder { /* IE 10+ */
   @apply text-sm;
 }
-.group-input:-moz-placeholder { /* Firefox 18- */
+.group-apply-input:-moz-placeholder,
+.groupid-input::-webkit-input-placeholder { /* Firefox 18- */
   @apply text-sm;
 }
-.group-input {
-  @apply inline-block h-7 w-20 ml-3;
+.group-apply-input {
+  @apply inline-block h-7 w-20 ml-3 text-center;
   @apply rounded-l-md border-gray-400;
-  @apply focus:outline-none focus:ring-1 focus:border-blue-300;
+  @apply focus:outline-none focus:ring-1 focus:border-purple-300;
 }
-.group-btn {
+.group-apply-btn {
   @apply h-7 pl-1 pr-1.5;
   @apply rounded-r-md bg-purple-600 text-white;
   @apply focus:outline-none focus:ring-2 focus:border-purple-400;
+}
+
+.wikigame-table,
+.wikigame-table * {
+  @apply border-collapse border border-blue-700;
+  @apply text-center;
+}
+.wikigame-table th {
+  @apply bg-gray-800 text-white;
+}
+.wikigame-table tr.odd td {
+  @apply bg-yellow-100;
+}
+.wikigame-table td {
+  @apply p-2;
 }
 
 .card-container {

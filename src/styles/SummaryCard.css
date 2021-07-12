@@ -18,6 +18,9 @@
   @apply bg-blue-400 hover:bg-blue-500;
   @apply focus:outline-none focus:ring focus:border-blue-300
 }
+.grouped  .summary-action > button {
+  @apply opacity-30;
+}
 .boxart-box {
   @apply flex flex-shrink-0 p-1;
 }
@@ -25,11 +28,17 @@
   @apply h-full rounded-md;
   aspect-ratio: 1 / 1;
 }
+.grouped .boxart-box > img {
+  @apply opacity-30;
+}
 .summary-box {
   @apply flex flex-grow flex-col px-1 overflow-x-hidden;
 }
 .game-title {
   @apply block max-w-max text-lg whitespace-nowrap overflow-x-hidden;
+}
+.grouped .game-title {
+  @apply opacity-30;
 }
 .game-title:hover {
   @apply transform transition-transform duration-1000 ease-in delay-500;
@@ -44,6 +53,7 @@
   @apply text-lg leading-4;
   @apply bg-gray-700 text-white;
 }
-.game-group.active {
-  @apply bg-gray-100 text-gray-500;
+.grouped .game-country,
+.grouped .game-group {
+  @apply opacity-30;
 }
