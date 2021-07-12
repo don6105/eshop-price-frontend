@@ -17,17 +17,17 @@
             <span v-if="summary.IsLowestPrice == 1" class="lowest-price">史低</span>
           </div>
           <div class="price-group">
-            <span class="price">{{ summary.MinPrice }}</span> 
+            <span class="price">{{ summary.GroupPrice }}</span> 
             <s 
-              v-if="summary.MinPrice != summary.MinMSRP" 
+              v-if="summary.GroupPrice != summary.GroupMSRP" 
               class="msrp"
             >
-              {{ summary.MinMSRP }}
+              {{ summary.GroupMSRP }}
             </s>
-            <span class="country">({{ summary.MinCountry }})</span>
+            <span class="country">({{ summary.GroupCountry }})</span>
           </div>
-          <div v-if="summary.MinDiscount > 0" class="discount-box">
-            {{ summary.MinDiscount }}% 
+          <div v-if="summary.GroupDiscount > 0" class="discount-box">
+            {{ summary.GroupDiscount }}% 
             <span>off</span>
           </div>
       </div>
