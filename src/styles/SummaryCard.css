@@ -42,7 +42,7 @@
 }
 .game-title:hover {
   @apply transform transition-transform duration-1000 ease-in delay-500;
-  @apply overflow-x-visible -translate-x-32;
+  @apply overflow-x-visible -translate-x-80;
 }
 .game-country {
   @apply inline-block h-5 max-w-max px-3 mr-2 rounded-md;

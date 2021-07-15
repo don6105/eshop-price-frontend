@@ -141,7 +141,7 @@ export default {
     getGroupedSummary() {
       this.enable_apply_btn = true;
       this.getWikiGameList();
-      if(this.grouped_query.length === 0) {
+      if(this.grouped_query.length === 0 && this.group_id.length === 0) {
         this.grouped_list = [];
         return;
       }
@@ -189,7 +189,7 @@ export default {
           this.enable_apply_btn = false;
         })
         .catch((error) => {
-          if(error.response.status) {
+          if(error.response.status == 403) {
             this.$router.push({name: 'Login'});
           }
         });

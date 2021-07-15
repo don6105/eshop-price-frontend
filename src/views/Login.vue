@@ -91,8 +91,8 @@ export default {
       return true;
     },
     clearLogin() {
-      this.$cookies.remove('token');
-      this.$cookies.remove('login_user');
+      this.$cookies.remove('token', '/');
+      this.$cookies.remove('login_user', '/');
       this.login_user = '';
     },
     login() {
@@ -111,12 +111,13 @@ export default {
               let user   = response.data.success.user;
               let expire = response.data.success.expire;
               expire = new Date(expire).toUTCString();
-              _this.$cookies.set('token',      token, expire);
-              _this.$cookies.set('login_user', user,  expire);
+              _this.$cookies.set('token',      token, expire, '/');
+              _this.$cookies.set('login_user', user,  expire, '/');
               _this.login_user = user;
+              this.$root.reloadLoginState();
               setTimeout(() => {
                 location.href = _this.prevRoute.path;
-              }, 2500);
+              }, 1700);
             } catch (error) {
               _this.clearLogin();
               _this.login_msg = true;
@@ -130,8 +131,7 @@ export default {
     }
   },
   mounted() {
-    let login_user = this.$cookies.get('login_user');
-    this.login_user = (login_user !== null)? login_user : '';
+    this.$root.reloadLoginState();
   },
   beforeRouteEnter(to, from, next) {
     next(vm => { vm.prevRoute = from; });

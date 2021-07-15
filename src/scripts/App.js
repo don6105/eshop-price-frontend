@@ -16,9 +16,12 @@ export default {
       }
     },
     clearLogin() {
-      this.$cookies.remove('token');
-      this.$cookies.remove('login_user');
-      this.login_user = "";
+      this.$cookies.remove('token', '/');
+      this.$cookies.remove('login_user', '/');
+    },
+    reloadLoginState() {
+      let login_user = this.$cookies.get('login_user', '/');
+      this.login_user = (login_user !== null)? login_user : '';
     },
     logout() {
       let _this   = this;
@@ -30,15 +33,27 @@ export default {
       };
       axios
         .post(api_url, null, {headers: headers})
+        .catch(() => {})
         .finally(() => {
           _this.clearLogin();
-          _this.login_msg = true;
+          _this.reloadLoginState();
+          // check permission after login.
+          if(location.href.indexOf("/admin/") > -1 && this.login_user == '') {
+            _this.$router.push({name: 'GameList'});
+          }
         });
     }
   },
   mounted() {
-    let login_user = this.$cookies.get('login_user');
-    this.login_user = (login_user !== null)? login_user : '';
+    this.reloadLoginState();
+
+    // check permission before enter page.
+    this.$router.beforeEach((to, from, next) => {
+      if(to.fullPath.indexOf("/admin/") > -1 && this.login_user == '') {
+        next({name: 'Login'});
+      }
+      next();
+    });
   },
   updated() {
     let menu_item = document.querySelectorAll('.dropdown-menu > *');
