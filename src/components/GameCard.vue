@@ -13,7 +13,7 @@
       <div class="game-data">
           <div class="game-title">{{ summary.Title }}</div>
           <div class="tag-group">
-            <span class="all-chinese">全區中文</span>
+            <span v-if="summary.IsFullChinese == 1" class="all-chinese">全區中文</span>
             <span v-if="summary.IsLowestPrice == 1" class="lowest-price">史低</span>
           </div>
           <div class="price-group">
